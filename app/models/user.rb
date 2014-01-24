@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   before_validation :prep_email
   before_save :create_avatar_url
 
-  validates :email, presence: true, uniqueness: true, format: {with: /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/}
+  validates :email, presence: true, uniqueness: true, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
   validates :username, presence: true, uniqueness: true
   validates :name, presence: true
 
