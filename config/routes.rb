@@ -1,4 +1,6 @@
 Rabbit::Application.routes.draw do
+  resources :ribbits
+
   resources :users
   resources :sessions
 
